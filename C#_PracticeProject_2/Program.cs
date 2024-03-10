@@ -5,8 +5,6 @@ using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
 
 namespace C__PracticeProject_2;
-
-
 class Program
 {
     static void Main(string[] args)
@@ -20,10 +18,18 @@ class Program
 
         //list.ReversePrintRecursion();
 
-        list.ReverseRecursion();
+        //list.ReverseRecursion();
         //list.DeleteAt(2);
         //list.Reverse();
-        list.PrintList();
-        Console.WriteLine(list.Count);
+        //list.PrintList();
+        //Console.WriteLine(list.Count);
+
+        LinkedListDoublyImplement.LinkedListDoubly<int> listDoubly = new LinkedListDoublyImplement.LinkedListDoubly<int>();
+        listDoubly.InsertAtHead(5);
+        listDoubly.InsertAtHead(9);
+        listDoubly.InsertAtHead(13);
+        listDoubly.InsertAtHead(3);
+        listDoubly.PrintList(); 
+        Console.WriteLine(listDoubly.Count);
     }
 }
