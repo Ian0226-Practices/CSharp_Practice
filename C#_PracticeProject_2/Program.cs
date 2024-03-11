@@ -27,8 +27,9 @@ class Program
         LinkedListDoublyImplement.LinkedListDoubly<int> listDoubly = new LinkedListDoublyImplement.LinkedListDoubly<int>();
         listDoubly.InsertAtHead(5);
         listDoubly.InsertAtHead(9);
-        listDoubly.InsertAtHead(13);
-        listDoubly.InsertAtHead(3);
+        listDoubly.InsertAtTail(13);
+        listDoubly.InsertAtTail(3);
+        listDoubly.Insert(77,3);
         listDoubly.PrintList(); 
         Console.WriteLine(listDoubly.Count);
     }

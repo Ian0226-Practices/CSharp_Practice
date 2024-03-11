@@ -2,7 +2,7 @@ namespace LinkedListDoublyImplement;
 
 class LinkedListDoubly<T>
 {
-    private Node<T> head = new Node<T>();
+    Node<T> head = new Node<T>();
 
     public int Count = 0;
 
@@ -26,26 +26,27 @@ class LinkedListDoubly<T>
 
         return newNode;
     }
+    
     /// <summary>
     /// Insert element at head.
     /// </summary>
     /// <param name="data">Value that you want to insert.</param>
     public void InsertAtHead(T data)
     {
-        Node<T> temp = GetNewNode(data);
+        Node<T> newNode = GetNewNode(data);
+        Count++;
         if(head == null)
         {
-            head = temp;
+            head = newNode;
             return;
         }
 
         //Create link of new node and head node.
-        head.prev = temp;
-        temp.next = head;
+        head.prev = newNode;
+        newNode.next = head;
 
         //Set head to new node.
-        head = temp;
-        Count++;
+        head = newNode;
     }
 
     /// <summary>
@@ -54,7 +55,23 @@ class LinkedListDoubly<T>
     /// <param name="data">Value that you want to insert.</param>
     public void InsertAtTail(T data)
     {
-
+        Node<T> newNode = GetNewNode(data);
+        Count++;
+        if(Count <= 0)
+        {
+            head = newNode;
+            return;
+        }
+        
+        Node<T> temp = new Node<T>();
+        temp = head;
+        for(int i = 0; i < Count-1; i++)
+        {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        newNode.prev = temp;
+        newNode.next = null;
     }
 
     /// <summary>
@@ -64,7 +81,26 @@ class LinkedListDoubly<T>
     /// <param name="n">The position you want to insert.</param>
     public void Insert(T data,int n)
     {
+        Node<T> newNode = GetNewNode(data);
+        Count++;
+        if(Count <= 0)
+        {
+            head = newNode;
+            return;
+        }
 
+        Node<T> temp = new Node<T>();
+        Node<T> temp2 = new Node<T>();
+        temp = head;
+        for(int i = 0;i < n-1; i++)
+        {
+            temp = temp.next;
+        }
+        temp2 = temp.prev;
+        temp2.next = newNode;
+        newNode.next = temp;
+        newNode.prev = temp2;
+        temp.prev = newNode;
     }
 
     /// <summary>
