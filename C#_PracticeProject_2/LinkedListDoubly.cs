@@ -34,10 +34,11 @@ class LinkedListDoubly<T>
     public void InsertAtHead(T data)
     {
         Node<T> newNode = GetNewNode(data);
-        Count++;
+        
         if(head == null)
         {
             head = newNode;
+            Count++;
             return;
         }
 
@@ -47,6 +48,7 @@ class LinkedListDoubly<T>
 
         //Set head to new node.
         head = newNode;
+        Count++;
     }
 
     /// <summary>
@@ -56,10 +58,10 @@ class LinkedListDoubly<T>
     public void InsertAtTail(T data)
     {
         Node<T> newNode = GetNewNode(data);
-        Count++;
         if(Count <= 0)
         {
             head = newNode;
+            Count++;
             return;
         }
         
@@ -72,6 +74,7 @@ class LinkedListDoubly<T>
         temp.next = newNode;
         newNode.prev = temp;
         newNode.next = null;
+        Count++;
     }
 
     /// <summary>
@@ -82,10 +85,10 @@ class LinkedListDoubly<T>
     public void Insert(T data,int n)
     {
         Node<T> newNode = GetNewNode(data);
-        Count++;
         if(Count <= 0)
         {
             head = newNode;
+            Count++;
             return;
         }
 
@@ -101,6 +104,7 @@ class LinkedListDoubly<T>
         newNode.next = temp;
         newNode.prev = temp2;
         temp.prev = newNode;
+        Count++;
     }
 
     /// <summary>
@@ -117,16 +121,11 @@ class LinkedListDoubly<T>
         }
 
         temp = head;
-        for(int i = 0; i < Count;i++)
+        while(temp != null)
         {
             Console.Write(temp.data + " ");
             temp = temp.next;
         }
-        /*if(temp != null)
-        {
-            Console.Write(temp.data + " ");
-            temp = temp.next;
-        }*/
         Console.Write("\n");
     }
 
@@ -135,7 +134,25 @@ class LinkedListDoubly<T>
     /// </summary>
     public void ReversePrintList()
     {
+        Node<T> temp = new Node<T>();
+        if(Count <= 0)
+        {
+            Console.WriteLine("The list has no element.");
+            return;
+        }
 
+        temp = head;
+        while(temp.next != null )
+        {
+            temp = temp.next;
+        }
+
+        while(temp != null)
+        {
+            Console.Write(temp.data + " ");
+            temp = temp.prev;
+        }
+        Console.Write("\n");
     }
 }
 
