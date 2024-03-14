@@ -9,28 +9,34 @@ class Program
 {
     static void Main(string[] args)
     {
-        LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
+        //Linked List.
+        /*LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
         list.Insert(5);
         list.Insert(3);
         list.Insert(150);
         list.Insert(9);
         list.Insert(11);
 
-        //list.ReversePrintRecursion();
+        list.ReversePrintRecursion();
+        list.ReverseRecursion();
+        list.DeleteAt(2);
+        list.Reverse();
+        list.PrintList();
+        Console.WriteLine(list.Count);*/
 
-        //list.ReverseRecursion();
-        //list.DeleteAt(2);
-        //list.Reverse();
-        //list.PrintList();
-        //Console.WriteLine(list.Count);
-
-        LinkedListDoublyImplement.LinkedListDoubly<int> listDoubly = new LinkedListDoublyImplement.LinkedListDoubly<int>();
+        //Doubly Linked List.
+        /*LinkedListDoublyImplement.LinkedListDoubly<int> listDoubly = new LinkedListDoublyImplement.LinkedListDoubly<int>();
         listDoubly.InsertAtHead(5);
         listDoubly.InsertAtTail(9);
         listDoubly.InsertAtTail(13);
         listDoubly.InsertAtTail(3);
         listDoubly.Insert(77,3);
         listDoubly.ReversePrintList(); 
-        Console.WriteLine(listDoubly.Count);
+        Console.WriteLine(listDoubly.Count);*/
+
+        StackInArrayImplement.StackInArray<int> stack = new StackInArrayImplement.StackInArray<int>();
+        stack.Push(3);
+        stack.Push(8);
+        stack.PrintAllStack();
     }
 }
