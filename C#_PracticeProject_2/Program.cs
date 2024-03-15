@@ -37,6 +37,11 @@ class Program
         StackInArrayImplement.StackInArray<int> stack = new StackInArrayImplement.StackInArray<int>();
         stack.Push(3);
         stack.Push(8);
+        stack.Push(13);
+        stack.Pop();
+        stack.Pop();
+        stack.Pop();
+        stack.Pop();
         stack.PrintAllStack();
     }
 }

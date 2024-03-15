@@ -21,10 +21,28 @@ class StackInArray<T>
     }
 
     /// <summary>
+    /// Pop a element in stack.
+    /// </summary>
+    public void Pop()
+    {
+        if(top == -1)
+        {
+            Console.WriteLine("Error ! Stack has no element,can't pop.");
+            return;
+        }
+        top--;
+    }
+
+    /// <summary>
     /// Print all stack.
     /// </summary>
     public void PrintAllStack()
     {
+        if(top == -1)
+        {
+            Console.WriteLine("Stack has no element.");
+            return;
+        }
         while(top >= 0)
         {
             Console.Write(array[top] + " ");
