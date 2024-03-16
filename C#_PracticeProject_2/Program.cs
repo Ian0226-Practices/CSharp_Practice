@@ -38,10 +38,12 @@ class Program
         stack.Push(3);
         stack.Push(8);
         stack.Push(13);
+        Console.WriteLine(stack.IsEmpty());
         stack.Pop();
         stack.Pop();
         stack.Pop();
         stack.Pop();
+        
         stack.PrintAllStack();
     }
 }

@@ -34,6 +34,31 @@ class StackInArray<T>
     }
 
     /// <summary>
+    /// Get the top element in stack.
+    /// </summary>
+    /// <returns>Return top element.</returns>
+    public T Top()
+    {
+        return array[top];
+    }
+
+    /// <summary>
+    /// Check stack has element or not.
+    /// </summary>
+    /// <returns>Return true if has element,otherwise return false.</returns>
+    public bool IsEmpty()
+    {
+        if(top > 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    /// <summary>
     /// Print all stack.
     /// </summary>
     public void PrintAllStack()
