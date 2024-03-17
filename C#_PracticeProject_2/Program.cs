@@ -9,7 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Linked List.
+        #region Linked List.
         /*LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
         list.Insert(5);
         list.Insert(3);
@@ -23,8 +23,9 @@ class Program
         list.Reverse();
         list.PrintList();
         Console.WriteLine(list.Count);*/
+        #endregion
 
-        //Doubly Linked List.
+        #region Doubly Linked List.
         /*LinkedListDoublyImplement.LinkedListDoubly<int> listDoubly = new LinkedListDoublyImplement.LinkedListDoubly<int>();
         listDoubly.InsertAtHead(5);
         listDoubly.InsertAtTail(9);
@@ -33,8 +34,10 @@ class Program
         listDoubly.Insert(77,3);
         listDoubly.ReversePrintList(); 
         Console.WriteLine(listDoubly.Count);*/
+        #endregion
 
-        StackInArrayImplement.StackInArray<int> stack = new StackInArrayImplement.StackInArray<int>();
+        #region Stack implement by Array.
+        /*StackInArrayImplement.StackInArray<int> stack = new StackInArrayImplement.StackInArray<int>();
         stack.Push(3);
         stack.Push(8);
         stack.Push(13);
@@ -44,6 +47,21 @@ class Program
         stack.Pop();
         stack.Pop();
         
-        stack.PrintAllStack();
+        stack.PrintAllStack();*/
+        #endregion
+
+        #region Stack implemented by Linked List.
+        StackInLinkedListImplement.StackInLinkedList<int> stackL = new StackInLinkedListImplement.StackInLinkedList<int>();
+        stackL.Push(5);
+        stackL.Push(9);
+        stackL.Push(53);
+        stackL.Push(3);
+        stackL.Pop();
+        stackL.Pop();
+        stackL.Pop();
+        stackL.Pop();
+        stackL.PrintAllStack();
+        Console.WriteLine(stackL.Top());
+        #endregion
     }
 }
