@@ -3,6 +3,8 @@ using System.Dynamic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
+using System.Collections.Generic;
+using System;
 
 namespace C__PracticeProject_2;
 class Program
@@ -51,7 +53,7 @@ class Program
         #endregion
 
         #region Stack implemented by Linked List.
-        StackInLinkedListImplement.StackInLinkedList<int> stackL = new StackInLinkedListImplement.StackInLinkedList<int>();
+        /*StackInLinkedListImplement.StackInLinkedList<int> stackL = new StackInLinkedListImplement.StackInLinkedList<int>();
         stackL.Push(5);
         stackL.Push(9);
         stackL.Push(53);
@@ -61,7 +63,29 @@ class Program
         stackL.Pop();
         stackL.Pop();
         stackL.PrintAllStack();
-        Console.WriteLine(stackL.Top());
+        Console.WriteLine(stackL.Top());*/
         #endregion
+
+        Program program = new Program();
+        string str = "HelloWorld";
+        str = program.StringReverse(str);
+        Console.WriteLine(str);
+    }
+
+    public string StringReverse(string str)
+    {
+        char[] c = str.ToCharArray();
+        Stack<char> S = new Stack<char>();
+        for(int i=0; i < c.Length;i++)
+        {
+            S.Push(c[i]);
+        }
+
+        for(int i=0; i < c.Length;i++)
+        {
+            c[i] = S.Pop();
+        }
+        string str1 = new string(c);
+        return str1;
     }
 }
