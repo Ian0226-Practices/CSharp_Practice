@@ -12,19 +12,14 @@ class Program
     static void Main(string[] args)
     {
         #region Linked List.
-        /*LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
+        LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
         list.Insert(5);
         list.Insert(3);
-        list.Insert(150);
-        list.Insert(9);
-        list.Insert(11);
-
-        list.ReversePrintRecursion();
-        list.ReverseRecursion();
-        list.DeleteAt(2);
-        list.Reverse();
+        list.Insert(7);
+        list.Insert(15);
+        list.ReverseUsingStack();
         list.PrintList();
-        Console.WriteLine(list.Count);*/
+        Console.WriteLine(list.Count);
         #endregion
 
         #region Doubly Linked List.
@@ -66,21 +61,24 @@ class Program
         Console.WriteLine(stackL.Top());*/
         #endregion
 
-        Program program = new Program();
+        /*Program program = new Program();
         string str = "HelloWorld";
         str = program.StringReverse(str);
-        Console.WriteLine(str);
+        Console.WriteLine(str);*/
     }
 
     public string StringReverse(string str)
     {
         char[] c = str.ToCharArray();
         Stack<char> S = new Stack<char>();
+
+        //將字元放入Stack
         for(int i=0; i < c.Length;i++)
         {
             S.Push(c[i]);
         }
 
+        //將字元從Stack中拔除並放回字元陣列
         for(int i=0; i < c.Length;i++)
         {
             c[i] = S.Pop();

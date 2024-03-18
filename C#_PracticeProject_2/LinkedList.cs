@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LinkedListImplement;
 class LinkedList<T>
 {
@@ -211,6 +213,39 @@ class LinkedList<T>
         Node<T> temp2 = temp.next;
         temp2.next = temp;
         temp.next = null;
+    }
+
+    public void ReverseUsingStack()
+    {
+        if(Count <= 0)
+        {
+            Console.WriteLine("There has no element in list.");
+            return;
+        }
+        if(Count == 1)
+        {
+            Console.WriteLine("There is only one element in list.");
+            return;
+        }
+        Node<T> temp = new Node<T>();
+        Stack<Node<T>> S = new Stack<Node<T>>();
+        temp = head;
+        while(temp != null)
+        {
+            S.Push(temp);
+            temp = temp.next;
+        }
+
+        temp = S.Pop();
+        head = temp;
+        while(S.Count > 0)
+        {
+            temp.next = S.Pop();
+            temp = temp.next;
+        }
+        temp.next = null;
+
+        
     }
 }
 
