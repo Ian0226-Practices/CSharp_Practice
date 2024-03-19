@@ -12,14 +12,14 @@ class Program
     static void Main(string[] args)
     {
         #region Linked List.
-        LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
+        /*LinkedListImplement.LinkedList<int> list = new LinkedListImplement.LinkedList<int>();
         list.Insert(5);
         list.Insert(3);
         list.Insert(7);
         list.Insert(15);
         list.ReverseUsingStack();
         list.PrintList();
-        Console.WriteLine(list.Count);
+        Console.WriteLine(list.Count);*/
         #endregion
 
         #region Doubly Linked List.
@@ -60,6 +60,22 @@ class Program
         stackL.PrintAllStack();
         Console.WriteLine(stackL.Top());*/
         #endregion
+
+        QueueInArrayImplement.QueueInArray<int> queueInArray = new QueueInArrayImplement.QueueInArray<int>();
+        queueInArray.Enqueue(9);
+        queueInArray.Enqueue(6);
+        queueInArray.Enqueue(3);
+        queueInArray.Dequeue();
+        queueInArray.Enqueue(15);
+        queueInArray.Enqueue(19);
+        queueInArray.Enqueue(7);
+        queueInArray.Enqueue(1);
+        queueInArray.Enqueue(5);
+        queueInArray.Enqueue(29);
+        queueInArray.Enqueue(17);
+        queueInArray.Enqueue(55);
+        Console.WriteLine(queueInArray.Front());
+        queueInArray.PrintQueue();
 
         /*Program program = new Program();
         string str = "HelloWorld";

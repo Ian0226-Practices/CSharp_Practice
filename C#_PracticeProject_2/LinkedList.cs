@@ -244,8 +244,6 @@ class LinkedList<T>
             temp = temp.next;
         }
         temp.next = null;
-
-        
     }
 }
 
