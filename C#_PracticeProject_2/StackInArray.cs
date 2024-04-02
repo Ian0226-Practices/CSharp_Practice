@@ -48,14 +48,7 @@ class StackInArray<T>
     /// <returns>Return true if has element,otherwise return false.</returns>
     public bool IsEmpty()
     {
-        if(top > 0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return top > 0 ? false : true;
     }
 
     /// <summary>

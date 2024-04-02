@@ -40,9 +40,7 @@ class Program
         stack.Push(13);
         Console.WriteLine(stack.IsEmpty());
         stack.Pop();
-        stack.Pop();
-        stack.Pop();
-        stack.Pop();
+        stack.IsEmpty();
         
         stack.PrintAllStack();*/
         #endregion
@@ -61,7 +59,7 @@ class Program
         Console.WriteLine(stackL.Top());*/
         #endregion
 
-        QueueInArrayImplement.QueueInArray<int> queueInArray = new QueueInArrayImplement.QueueInArray<int>();
+        /*QueueInArrayImplement.QueueInArray<int> queueInArray = new QueueInArrayImplement.QueueInArray<int>();
         queueInArray.Enqueue(9);
         queueInArray.Enqueue(6);
         queueInArray.Enqueue(3);
@@ -75,12 +73,25 @@ class Program
         queueInArray.Enqueue(17);
         queueInArray.Enqueue(55);
         Console.WriteLine(queueInArray.Front());
-        queueInArray.PrintQueue();
+        queueInArray.PrintQueue();*/
 
-        /*Program program = new Program();
-        string str = "HelloWorld";
+        Program program = new Program();
+        /*string str = "HelloWorld";
         str = program.StringReverse(str);
         Console.WriteLine(str);*/
+
+        //program.PrintStarTower(8);
+
+        #region  Queue implement by Linked List.
+        /*QueueInLinkedListImplement.QueueInLinkedList<int> queue = new QueueInLinkedListImplement.QueueInLinkedList<int>();
+        queue.Enqueue(8);
+        queue.Enqueue(5);
+        queue.Enqueue(2);
+        queue.Dequeue();
+        Console.WriteLine(queue.Front());
+
+        queue.PrintQueue();*/
+        #endregion
     }
 
     public string StringReverse(string str)
@@ -101,5 +112,25 @@ class Program
         }
         string str1 = new string(c);
         return str1;
+    }
+
+    public void PrintStarTower(int towerHeight)
+    {
+        int tHeight = towerHeight;
+
+        for (int i = 1; i <= tHeight; i++)
+        {
+            for (int j = 1; j <= tHeight - i; j++)
+            {
+                Console.Write(" ");
+            }
+
+            for (int k = 1; k <= 2 * i - 1; k++)
+            {
+                Console.Write("*");
+            }
+
+            Console.WriteLine();
+        }
     }
 }
