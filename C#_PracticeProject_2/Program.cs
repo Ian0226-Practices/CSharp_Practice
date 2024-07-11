@@ -92,6 +92,9 @@ class Program
 
         queue.PrintQueue();*/
         #endregion
+
+        PrefixAndPostfixExpressions.Postfix postfix = new PrefixAndPostfixExpressions.Postfix();
+        Console.Write(postfix.CatchLetters('-'));
     }
 
     public string StringReverse(string str)
@@ -100,13 +103,13 @@ class Program
         Stack<char> S = new Stack<char>();
 
         //將字元放入Stack
-        for(int i=0; i < c.Length;i++)
+        for (int i = 0; i < c.Length; i++)
         {
             S.Push(c[i]);
         }
 
         //將字元從Stack中拔除並放回字元陣列
-        for(int i=0; i < c.Length;i++)
+        for (int i = 0; i < c.Length; i++)
         {
             c[i] = S.Pop();
         }
