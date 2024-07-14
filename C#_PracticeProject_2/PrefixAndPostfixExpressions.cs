@@ -33,33 +33,53 @@ namespace PrefixAndPostfixExpressions;
 /// <typeparam name="T"></typeparam>
 class Postfix
 {
-    StackInArrayImplement.StackInArray<string> stack = new StackInArrayImplement.StackInArray<string>();
+    StackInLinkedListImplement.StackInLinkedList<char> stack = new StackInLinkedListImplement.StackInLinkedList<char>();
 
-    List<string> postfixExp = new List<string>();
+    List<char> postfixExp = new List<char>();
 
-    public void EvaluatePostfix(string[] exp)
+    public void EvaluatePostfix(char[] exp)
     {
         if (exp.Length == 0) { return; }
 
         for (int i = 0; i < exp.Length; i++)
         {
-            if (exp[i].Equals("x") || exp[i].Equals("/") || exp[i].Equals("+") || exp[i].Equals("-"))
+            if (!char.IsLetter(exp[i])) //exp[i].Equals("*") || exp[i].Equals("/") || exp[i].Equals("+") || exp[i].Equals("-")
             {
-                // while (!stack.IsEmpty() && stack.Top() > exp[i])
-                // {
-                //     postfixExp.Add(stack.Pop());
-                // }
+                while (!stack.IsEmpty() && CatchLetters(Convert.ToChar(stack.Top())) > Convert.ToChar(exp[i]))
+                {
+                    postfixExp.Add(stack.Top());
+                    //Console.WriteLine(exp[i]);
+                    stack.Pop();
+                }
                 stack.Push(exp[i]);
             }
             else
             {
+                //Console.WriteLine(exp[i]);
                 postfixExp.Add(exp[i]);
             }
         }
+        while (!stack.IsEmpty())
+        {
+            //Console.Write(stack.Top());
+            postfixExp.Add(stack.Top());
+            stack.Pop();
+        }
+
+        // for (int i = 0; i < postfixExp.Count; i++)
+        // {
+        //     Console.Write(postfixExp[i]);
+        //     Console.Write(exp[i]);
+        // }
+        // Console.WriteLine();
+        // for (int i = 0; i < postfixExp.Count; i++)
+        // {
+        //     Console.Write(exp[i]);
+        // }
     }
 
     /// <summary>
-    /// Return int of letter priority.1 is Characters priority A~Z,2 is Operators priority +-,3 is Higher Operators priority */ ,
+    /// Return a number of letter priority.1 is Characters priority A~Z,2 is Operators priority +-,3 is Higher Operators priority */ ,
     /// 4 is Parentheses priority ()[].
     /// </summary>
     /// <param name="letter"></param>
@@ -96,9 +116,9 @@ class Postfix
         return priority;
     }
 
-    void PrintPostfixExp()
+    public void PrintPostfixExp()
     {
-        foreach (string exp in postfixExp)
+        foreach (char exp in postfixExp)
         {
             Console.Write(exp);
         }

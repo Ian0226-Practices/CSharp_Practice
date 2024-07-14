@@ -94,7 +94,9 @@ class Program
         #endregion
 
         PrefixAndPostfixExpressions.Postfix postfix = new PrefixAndPostfixExpressions.Postfix();
-        Console.Write(postfix.CatchLetters('-'));
+        //Console.Write(postfix.CatchLetters('-'));
+        postfix.EvaluatePostfix("A+B-C*D".ToCharArray());
+        postfix.PrintPostfixExp();
     }
 
     public string StringReverse(string str)
