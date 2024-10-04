@@ -93,10 +93,25 @@ class Program
         queue.PrintQueue();*/
         #endregion
 
-        PrefixAndPostfixExpressions.Postfix postfix = new PrefixAndPostfixExpressions.Postfix();
+        //PrefixAndPostfixExpressions.Postfix postfix = new PrefixAndPostfixExpressions.Postfix();
         //Console.Write(postfix.CatchLetters('-'));
-        postfix.EvaluatePostfix("A+B-C*D".ToCharArray());
-        postfix.PrintPostfixExp();
+        // postfix.EvaluatePostfix("A*B+C-D".ToCharArray());
+        // postfix.PrintPostfixExp();
+
+        BST.BSTImplement bst = new BST.BSTImplement();
+        bst.Insert(bst.root, 9);
+        bst.Insert(bst.root, 20);
+        bst.Insert(bst.root, 99);
+        bst.Insert(bst.root, 13);
+        bst.Insert(bst.root, 35);
+        bst.Insert(bst.root, 18);
+        bst.Insert(bst.root, 105);
+        bst.Insert(bst.root, 1);
+
+        // Console.WriteLine(bst.FinMinRecursion(bst.root));
+        // Console.WriteLine(bst.Search(bst.root, 100));
+        Console.WriteLine(bst.FindHeight(bst.root));
+
     }
 
     public string StringReverse(string str)
